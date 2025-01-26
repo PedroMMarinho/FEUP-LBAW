@@ -1,0 +1,528 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+.swiper-custom-pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  font-size: 17px;
+  font-weight: 500; 
+  color: black;
+}
+
+.swiper-custom-pagination .swiper-pagination-bullet {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  opacity: 1;
+  text-align: center;
+}
+
+.swiper-custom-pagination .number {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-custom-pagination .line {
+  opacity: .3;
+  height: .25rem;
+  width: .75rem;
+  background-color: rgb(95, 95, 95);
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-custom-pagination .swiper-pagination-bullet-active .number {
+  opacity: 1;
+}
+
+
+.swiper-custom-pagination .swiper-pagination-bullet-active .line {
+  opacity: 1;
+  width: 2rem;
+}
+
+.swiper-slide img {
+  max-height: 600px; /* Set your desired fixed height */
+  object-fit: cover; /* Ensure the image covers the dimensions without distortion */
+}
+
+
+@media screen and (max-width: 800px) {
+  .swiper-slide {
+    height: 6.5rem;
+  }
+  .swiper-custom-nav {
+    display: none;
+  }
+  
+}
+
+
+.dropdown-content {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Style for each bid item */
+.bid-item {
+  display: flex;
+  flex-direction: row;
+  gap: 16px; /* Space between the bid details */
+  padding: 8px 0; /* Vertical padding */
+  border-bottom: 1px solid #ddd; /* Optional: Border between bids */
+}
+
+.bid-item p {
+  margin: 0; /* Remove default margin */
+}
+
+/* Hover effect for bid items (optional) */
+.bid-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Ensure the dropdown button is styled properly */
+.dropdown-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Add hover effect to the heart icon */
+.heart-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* On hover, scale the heart slightly to indicate selection */
+.heart-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.hide-scrollbar {
+  scrollbar-width: none; /*Firefox*/
+  -ms-overflow-style: none; /*Edge*/
+}
+
+/* For Chrome Safari Edge */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+.fade{
+  mask-image: linear-gradient(to bottom, black, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black, black 90%, transparent);
+}
+
+.dropdown-bid-history {
+  max-height: 300px; /* Adjust to the desired height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  padding: 10px;
+}
+
+/* Chat Container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background-color: #ffffff;
+  height: 100%;
+  border-width: 4px;
+  border-radius: 0.5rem;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+
+  min-height: 500px;
+  max-height: 500px;
+  border-radius: 10px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Box */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 10px;
+  max-height: calc(100% - 100px); /* To leave space for the input and button */
+  overflow-y: auto;
+  padding-right: 8px; /* Shifts the scrollbar slightly to the left */
+  padding-left: 8px; /* Adds space to the left of the content */
+}
+
+/* Customize the scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 6px; /* Reduce the width */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth fade in/out */
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Light, subtle scrollbar color */
+  border-radius: 10px; /* Make the scrollbar rounded */
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: transparent; /* Hide the track */
+}
+
+/* Show scrollbar when user is scrolling */
+.chat-box.scrolling::-webkit-scrollbar {
+  opacity: 1; /* Make it visible when scrolling */
+}
+/* Date Separator */
+.date-separator {
+  text-align: center;
+  margin: 16px 0;
+  font-weight: bold;
+  color: #999;
+}
+
+.date-separator span {
+  background-color: #e5e5e5;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+/* My Messages */
+.my-message {
+  background-color: #e0ffe0;
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 10px;
+  align-self: flex-end;
+  max-width: 70%;
+  word-wrap: break-word; /* Prevents overflow */
+  overflow-wrap: break-word; /* Prevents overflow */
+  word-break: break-word; /* Breaks words if necessary */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle drop shadow */
+  display: flex;
+  flex-direction: column;
+}
+
+.my-message .message-time {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px; /* Adds space between content and time */
+  align-self: flex-end; /* Positions the time at the right */
+  margin-left: auto; /* Ensures it aligns to the far right */
+}
+
+.my-message .message-content {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Other User's Messages */
+.chat-other-message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle drop shadow */
+  align-items: flex-start; /* Aligns content to the top */
+  max-width: 70%; /* Prevents message from overflowing */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: fit-content; /* Shrinks box width to content size */
+}
+
+.chat-profile-container {
+  display: flex; /* Ensures image and username are on the same row */
+  align-items: center; /* Vertically centers image and username */
+  gap: 8px; /* Spacing between the image and username */
+}
+
+/* Profile Image outside the message box */
+.chat-other-message .chat-profile-link {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-profile-container .chat-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  flex-shrink: 0;
+}
+
+
+/* Message Information (name, content, and time) */
+.chat-other-message .chat-message-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%; /* Ensures it takes only available space */
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  flex-grow: 1; /* Allows the message content to grow if there is space */
+  min-width: 0; /* Prevents it from exceeding its container */
+}
+
+/* Username */
+.chat-other-message .chat-user-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.chat-other-message .chat-user-name-link {
+  text-decoration: none;
+}
+
+.chat-other-message .chat-user-name-link:hover .chat-user-name {
+  text-decoration: underline;
+  color: #007bff; /* Customize the hover color */
+}
+
+/* Message Content */
+.chat-other-message .chat-message-content {
+  font-size: 14px;
+  color: #333;
+  word-wrap: break-word; /* Ensures content wraps properly */
+}
+
+/* Message Time (aligned to the right) */
+.chat-other-message .chat-message-time {
+  font-size: 12px;
+  color: #888;
+  align-self: flex-end; /* Aligns the time to the right */
+  margin-left: auto; /* Ensures time aligns to the far right */
+}
+
+/* Chat Input Form */
+.chat-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chat-input {
+  width: 85%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  resize: none; /* Disable resizing */
+  overflow-y: auto; /* Enable vertical scrolling when needed */
+  box-sizing: border-box; /* Ensure padding/border are included in width/height */
+  max-height: 150px; /* Prevents the textarea from growing too tall */
+  min-height: 50px; /* Ensures the textarea has a minimum height */
+  line-height: 1.25; /* Adds space between lines for readability */
+  
+}
+
+/* Custom scroll bar for Webkit browsers (Chrome, Safari) */
+.chat-input::-webkit-scrollbar {
+  display: none;
+}
+
+
+.chat-submit-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 25%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Icon Inside Button */
+.chat-submit-btn .send-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Chat Submit Button Hover */
+.chat-submit-btn:hover {
+  background-color: #45a049;
+}
+
+.chat-submit-btn:focus {
+  outline: none;
+}
+
+.loading-spinner {
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+
+/* Pop-up styles */
+.pop-up {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translateX(0); /* Initial position */
+  transition: opacity 0.7s ease, transform 0.7s ease; /* Smooth fade and slide */
+  font-size: 14px;
+  z-index: 9999;
+}
+
+/* Error pop-up styles */
+.pop-up.error {
+  background-color: #f44336; /* Red for errors */
+}
+
+/* Hidden state for fade-out and slide */
+.pop-up.slideout {
+  opacity: 0; /* Make it transparent */
+  transform: translateX(100%); /* Slide it to the right */
+}
+
+.notification-icon {
+  position: relative; /* Establish a reference for absolute positioning */
+  width: 24px;
+  height: 24px;
+  background-image: url("https://img.icons8.com/?size=100&id=84025&format=png&color=6b7280");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer; /* Shows the pointer cursor on hover */
+  display: flex; /* sm:flex */
+  align-items: center; /* sm:items-center */
+  transition: background-image 150ms ease-in-out; /* Smooth transition */
+}
+
+.notification-icon:hover {
+  background-image: url("https://img.icons8.com/?size=100&id=84025&format=png&color=374151"); /* Hover icon color */
+}
+
+.notification-icon:focus {
+  outline: none; /* focus:outline-none */
+}
+
+
+.notification-count {
+  position: absolute; /* Position relative to the .notification-icon */
+  bottom: 10px; /* Moves count to bottom-right corner */
+  right: -9px;
+  background-color: blue; /* Notification count background color */
+  color: white;
+  border-radius: 50%; /* Makes the count circular */
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  display: flex; /* Centers the count text */
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Makes the count non-clickable */
+  user-select: none; /* Prevents text selection */
+  font-weight: bold; /* Makes the count more visible */
+  visibility: hidden; /* Hidden by default */
+}
+
+#dropdown-notifications {
+  opacity: 0; /* Initially hidden */
+  transform: scale(0.95); /* Initially slightly scaled down */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.2s; /* Smooth transition on opacity and scaling */
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 300px; /* Adjust width as needed */
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 9999;
+  max-height: 150px; /* Adjust the height as needed */
+  overflow-y: auto; /* Scroll bar appears only if content exceeds max-height */
+}
+
+/* When the dropdown is shown */
+#dropdown-notifications.show {
+  opacity: 1;
+  transform: scale(1); /* Reset the scale */
+  visibility: visible;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s; /* Smooth transition */
+}
+
+/* When the dropdown is hidden */
+#dropdown-notifications.hide {
+  opacity: 0;
+  transform: scale(0.95); /* Slightly scale down when hiding */
+  visibility: hidden;
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in, visibility 0s 0.2s; /* Smooth transition when hiding */
+}
+
+/* Custom scrollbar */
+#dropdown-notifications::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+}
+
+#dropdown-notifications::-webkit-scrollbar-thumb {
+  background-color: #bebebe; /* Light gray color for the scrollbar thumb */
+  border-radius: 4px;
+}
+
+#dropdown-notifications::-webkit-scrollbar-thumb:hover {
+  background-color: #888; /* Darker color on hover */
+}
+
+#dropdown-notifications::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Light background color for the scrollbar track */
+  border-radius: 4px;
+}

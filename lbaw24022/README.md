@@ -1,0 +1,38 @@
+# Okshon
+
+## Running the image
+
+Run the following commands to **pull** and then **run** the **image**:
+
+```bash
+$ docker pull lbaw2425
+$ docker run -p 8001:80 gitlab.up.pt:5050/lbaw/lbaw2425/lbaw24022
+```
+
+## Access credentials
+
+### Accounts
+
+|   Type | Email | Password|
+| ------- | ----- | --------|
+|**Basic**|white@example.com | 1234 |
+|**Blocked**|dehero@example.com | 1234|
+|**Expert**|expert2@example.com | 1234|
+|**Admin**|admin1@example.com | 1234|
+
+### Paypal
+
+**email**: generalpaypal@personal.example.com
+
+**password**: 12345678
+
+### Cards
+
+**Number:** 5232104431967230
+
+**Expiry:** 12/2031
+
+**CVC:** any 3 digits
+
+
+
