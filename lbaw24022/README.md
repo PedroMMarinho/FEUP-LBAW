@@ -38,3 +38,10 @@ $ docker run -p 8001:80 gitlab.up.pt:5050/lbaw/lbaw2425/lbaw24022
 
 For a small run down of our website, checkout this section [Okshon Presentation](https://github.com/PedroMMarinho/FEUP-LBAW/wiki/pa#a10-presentation), or if you want to dig depper watch our youtube videos in https://www.youtube.com/@Okshon
 
+## Team
+
+* Bruno Miguel Gonçalves Ferreira | up202207863@edu.fe.up.pt
+* Eduardo Castro Portugal Ferreira | up202206628@edu.fe.up.pt
+* Pedro Miguel Silva Roleira Marinho | up202206854@edu.fe.up.pt
+* Xavier Santos Portugal Martins | up202206632@edu.fe.up.pt
+  
